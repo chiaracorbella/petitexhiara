@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="stylesheet.css">
+<link rel="stylesheet" href="stylesheet2.css">
 <title>Chiara's Portfolio</title>
 <link rel="icon" type="image/x-icon" href="icon.png">
 <script type="text/javascript">
@@ -238,7 +238,7 @@ items.forEach((item) => {
   addItemToScrolls(item);
 });
 
-function addItemToScrolls(text) {
+function addItemToScrolls(text)
  
   horizontalTextScroll.forEach((scrollItem) => {
     const textItem = document.createElement("span");
@@ -297,7 +297,7 @@ function addItemToScrolls(text) {
 <div class="navbar">
 <ul>
 <li><a href="home.html">CHIARA CORBELLA ✿</a></li>
-<li><a href="illustration.html">VISUAL COMMUNICATION</a></li>
+<li><a href="visual.html">VISUAL COMMUNICATION</a></li>
 <li><a href="#fiber arts">FIBER ARTS</a></li>
 <li><a href="#ceramics">CERAMICS</a></li>
 <li><a href="#contact">CONTACT</a></li>
@@ -305,21 +305,130 @@ function addItemToScrolls(text) {
 </div>
 
 <p class="portfolio">
-    here you can find chiara's work in illustration, graphic design and animation. click on each piece to find out more!
+    here you can find chiara's work in illustration, graphic design and animation. click over each piece to find out more!
     <br><br>
     ✿ ✿ ✿
 </p>
 
-<div class="row"> 
-  <div class="visual">
-    <img src="ends_and_beginnings.jpg" style="width:100%">
-    <img src="Would be neat.jpg" style="width:100%">
+<div class="row">
+  <div class="column">
+      <img src="img1.jpg" alt="is this love?" style="width:100%" onclick="openModal();currentSlide(1)">
+      <img src="img2.jpg" alt="ends and beginnings" style="width:100%" onclick="openModal();currentSlide(2)">
+      <img src="img5.jpg" alt="june" style="width:100%" onclick="openModal();currentSlide(5)">
+      <img src="img3.jpg" alt="a happy memory" style="width:100%" onclick="openModal();currentSlide(3)">
+      <img src="img4.jpg" alt="incontri" style="width:100%" onclick="openModal();currentSlide(4)">
   </div>
-  <div class="visual">
-    <img src="Crossings.jpg" style="width:100%">
-    <img src="purple_Morning_Glories.jpg" style="width:100%">
+
+  <div class="column">
+      <img src="img2.jpg" alt="ends and beginnings" style="width:100%" onclick="openModal();currentSlide(2)">
+      <img src="img2.jpg" alt="ends and beginnings" style="width:100%" onclick="openModal();currentSlide(2)">
+      <img src="img5.jpg" alt="june" style="width:100%" onclick="openModal();currentSlide(5)">
+      <img src="img3.jpg" alt="a happy memory" style="width:100%" onclick="openModal();currentSlide(3)">
+      <img src="img4.jpg" alt="incontri" style="width:100%" onclick="openModal();currentSlide(4)">
+  </div>
+
+  <div class="column">
+      <img src="img5.jpg" alt="june" style="width:100%" onclick="openModal();currentSlide(1);">
+      <img src="img2.jpg" alt="ends and beginnings" style="width:100%" onclick="openModal();currentSlide(2)">
+      <img src="img5.jpg" alt="june" style="width:100%" onclick="openModal();currentSlide(5)">
+      <img src="img3.jpg" alt="a happy memory" style="width:100%" onclick="openModal();currentSlide(3)">
+      <img src="img10.jpg" alt="downtown" style="width:100%" onclick="openModal();currentSlide(4)">
+  </div>
+
+  <div class="column">
+      <img src="img1.jpg" alt="is this love?" style="width:100%" onclick="openModal();currentSlide(1)">
+      <img src="img2.jpg" alt="ends and beginnings" style="width:100%" onclick="openModal();currentSlide(2)">
+      <img src="img5.jpg" alt="june" style="width:100%" onclick="openModal();currentSlide(5)">
+      <img src="img9.jpg" alt="glendale sunset" style="width:100%" onclick="openModal();currentSlide(3)">
+      <img src="img11.jpg" alt="winter in california" style="width:100%" onclick="openModal();currentSlide(4)">
+  </div>
+  
+</div>
+
+
+<div id="myModal" class="modal">
+  <span class="close cursor" onclick="closeModal()">&times;</span>
+  <div class="modal-content">
+    <div class="mySlides">
+    <img src="img1.jpg"  alt="is this love?" style="width:100%" class="vertical">
+    <div id="caption" class="caption">is this love?</div>
+    </div>
+
+    <div class="mySlides">
+    <img src="img2.jpg"  alt="ends and beginnings" style="width:100%" class="horizontal">
+    <div class="caption"></div>
+    </div>
+
+    <div class="mySlides">
+    <img src="img3.jpg" alt="a happy memory" style="width:100%" class="vertical">
+    <div class="caption"></div>
+    </div>
+    
+    <div class="mySlides">
+    <img src="img4.jpg" alt="incontri" style="width:100%" class="horizontal">
+    <div class="caption"></div>
+    </div>
+
+    <div class="mySlides">
+    <img src="img5.jpg" alt="june" style="width:100%" class="square">
+    <div class="caption"></div>
+    </div>
+
+    <div class="mySlides">
+    <img src="img9.jpg" alt="glendale sunset" style="width:100%" class="horizontal">
+    <div class="caption"></div>
+    </div>
+
+    <div class="mySlides">
+    <img src="img10.jpg" alt="downtown" style="width:100%" class="horizontal">
+    <div class="caption"></div>
+    </div>
+
+    <div class="mySlides">
+    <img src="img11.jpg" alt="winter in california" style="width:100%" class="horizontal">
+    <div class="caption"></div>
+    </div>
   </div>
 </div>
+
+<script>
+function openModal() {
+  document.getElementById("myModal").style.display = "block";
+}
+
+function closeModal() {
+  document.getElementById("myModal").style.display = "none";
+}
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script>
 
 <div class="footer">
 2025 © chiara corbella - this website was fully designed and developed by chiara corbella ✿
