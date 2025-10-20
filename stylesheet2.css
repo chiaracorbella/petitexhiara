@@ -63,11 +63,6 @@ ul li a:active {
   color: greenyellow;
 }
 
-.row {
-  display: flex;
-  flex-wrap: wrap;
-}
-
 .footer {
   position: fixed;
   left: 0;
@@ -85,10 +80,12 @@ ul li a:active {
   display: flex;
   width: 100%;
 }
+
 .scroll-container {
   flex-grow: 1;
   overflow: hidden;
 }
+
 .text-row {
   white-space: nowrap;
   padding: 2px 0;
@@ -101,6 +98,7 @@ ul li a:active {
   display: flex;
   animation: scroll 25s linear infinite;
 }
+
 .text-scroll {
   display: inline-flex;
   align-items: center;
@@ -149,14 +147,14 @@ ul li a:active {
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  padding-inline: 5rem;
+  padding-inline: .8rem;
   padding-bottom: 5rem;
 }
 
 .column {
-  -ms-flex: 25%;
-  flex: 25%;
-  max-width: 25%;
+  -ms-flex: 33%;
+  flex: 33%;
+  max-width: 33%;
   padding: 0 4px;
 }
 
@@ -164,6 +162,10 @@ ul li a:active {
   margin-top: 8px;
   vertical-align: middle;
   width: 100%;
+}
+
+.column img:hover {
+  opacity: 0.7;
 }
 
 @media screen and (max-width: 800px) {
@@ -182,25 +184,224 @@ ul li a:active {
   }
 }
 
+.main {
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  padding-inline: .8rem;
+  padding-bottom: 5rem;
+}
+
+.colonna {
+  -ms-flex: 25%;
+  flex: 25%;
+  max-width: 25%;
+  padding: 0 4px;
+}
+
+.colonna img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
+}
+
+@media screen and (max-width: 800px) {
+  .colonna {
+    -ms-flex: 50%;
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .colonna {
+    -ms-flex: 100%;
+    flex: 100%;
+    max-width: 100%;
+  }
+}
+
 .portfolio {
   text-align: center;
 }
 
 .visual {
-   -ms-flex: 50%;
-    flex: 50%;
-    max-width: 50%;
+   -ms-flex: 33%;
+    flex: 33%;
+    max-width: 33%;
 }
 
 .visual img {
-  margin-top: .2rem;
-  padding: 1rem;
+  padding: .8rem;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
   .visual {
     -ms-flex: 100%;
     flex: 100%;
     max-width: 100%;
   }
+}
+
+.container {
+  position: relative;
+  width: 100%;
+}
+
+.container:hover .overlay{
+  opacity: 100%;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+}
+
+.text {
+  color: black;
+  font-family: 'Inconsolata Regular', monospace;
+  font-size: 12px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+  background-color: rgba(255,255,255,0.8);
+  padding: 1rem;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none;
+  position: fixed;
+  padding-top: 2rem;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: none;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Modal Content */
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+/* The Close Button */
+.close {
+  font-family: 'Inconsolata Regular', monospace;
+  color: white;
+  position: absolute;
+  top: 4rem;
+  right: 4rem;
+  font-size: 4rem;
+}
+
+@media screen and (max-width: 800px) {
+  .close {
+  font-family: 'Inconsolata Regular', monospace;
+  color: white;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 2rem;
+}
+}
+
+.close:hover,
+.close:focus {
+  color: greenyellow;
+}
+
+.mySlides {
+  display: none;
+  max-height: 500px;
+}
+
+.vertical {
+  max-width: 35%;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  position: absolute;
+}
+
+@media screen and (max-width: 800px) {
+  .vertical {
+   max-width: 75%;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  position: absolute;
+}
+}
+
+.horizontal {
+  max-width: 70%;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  position: absolute;
+}
+
+@media screen and (max-width: 800px) {
+  .horizontal {
+   max-width: 75%;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  position: absolute;
+}
+}
+
+.square {
+  max-width: 50%;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  position: absolute;
+}
+
+@media screen and (max-width: 800px) {
+  .square {
+   max-width: 75%;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  position: absolute;
+}
+}
+
+/* Caption of modal image */
+.caption {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  color: #ffffff;
+  font-size: 12px;
 }
