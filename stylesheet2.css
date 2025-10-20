@@ -354,7 +354,7 @@ ul li a:active {
 }
 
 .horizontal {
-  max-width: 70%;
+  max-width: 65%;
   left: 0;
   right: 0;
   top: 0;
@@ -376,7 +376,7 @@ ul li a:active {
 }
 
 .square {
-  max-width: 50%;
+  max-width: 45%;
   left: 0;
   right: 0;
   top: 0;
@@ -401,6 +401,17 @@ ul li a:active {
 .caption {
   position: absolute;
   width: 100%;
+  text-align: center;
+  margin: 2rem;
+  color: #ffffff;
+  font-size: 12px;
+}
+
+.bottomcap {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  margin: .8rem;
   text-align: center;
   color: #ffffff;
   font-size: 12px;
